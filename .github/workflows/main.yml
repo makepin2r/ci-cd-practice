@@ -1,10 +1,14 @@
 name: test-workflow
+run-name: ${{ github.actor }} is learning GitHub Actions
 on: [push]
 
 jobs:
-    build:
-        name: test-job
-        runs-on: ubuntu-18.04
+    test:
+        runs-on: ubuntu-latest
         steps:
-            - name: echo Hello
-            - run: echo "Hello"
+            # - uses: actions/checkout@v3
+            # - uses: actions/setup-node@v3
+            #  with:
+            #      node-version: "14"
+            - name: Testing
+            - run: echo "Github Action Testing"
