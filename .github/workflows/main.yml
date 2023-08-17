@@ -6,5 +6,19 @@ jobs:
         name: ${{ github.actor }} is learning GitHub Actions
         runs-on: ubuntu-latest
         steps:
-            - name: Testing
-              run: echo "Github Action Testing"
+            - name: GitHub Action for Yarn
+              uses: Borales/actions-yarn@v4.2.0
+            - name: Run install
+              uses: borales/actions-yarn@v4
+              with:
+                  cmd: install # will run `yarn install` command
+            - name: Test the app
+              uses: borales/actions-yarn@v4
+              with:
+                  cmd: test # will run `yarn test` command
+
+            - name: Run test in sub-folder
+              uses: borales/actions-yarn@v4
+              with:
+                  cmd: test
+                  dir: "frontend" # will run `yarn test` in `frontend` sub folder
