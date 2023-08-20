@@ -17,9 +17,6 @@ jobs:
               with:
                   node-version: 18.x
                   cache: "npm"
-            # yarn 설치
-            - name: GitHub Action for Yarn
-              uses: Borales/actions-yarn@v4.2.0
             # yarn install
             - name: Run install
               uses: borales/actions-yarn@v4
